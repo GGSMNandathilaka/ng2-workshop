@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'detail-view',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailViewComponent implements OnInit {
 
-  constructor() { }
+  hotelID: number;
+
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      this.hotelID = params['id'];
+    });
   }
 
 }
