@@ -8,12 +8,14 @@ import {DataService} from '../services/data.service';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelGridComponent } from './hotel-grid/hotel-grid.component';
 import {routing} from "./app.routes";
+import { DetailViewComponent } from './detail-view/detail-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotelCardComponent,
-    HotelGridComponent
+    HotelGridComponent,
+    DetailViewComponent
   ],
   imports: [
     BrowserModule,
