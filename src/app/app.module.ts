@@ -6,11 +6,13 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {DataService} from '../services/data.service';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
+import { HotelGridComponent } from './hotel-grid/hotel-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HotelCardComponent
+    HotelCardComponent,
+    HotelGridComponent
   ],
   imports: [
     BrowserModule,
