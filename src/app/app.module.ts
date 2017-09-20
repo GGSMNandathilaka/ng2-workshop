@@ -7,6 +7,7 @@ import {HttpModule} from '@angular/http';
 import {DataService} from '../services/data.service';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelGridComponent } from './hotel-grid/hotel-grid.component';
+import {routing} from "./app.routes";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HotelGridComponent } from './hotel-grid/hotel-grid.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    routing
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
