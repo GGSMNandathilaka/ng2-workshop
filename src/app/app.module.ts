@@ -10,6 +10,7 @@ import {HotelGridComponent} from './hotel-grid/hotel-grid.component';
 import {routing} from './app.routes';
 import {DetailViewComponent} from './detail-view/detail-view.component';
 import {RouterModule} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {RouterModule} from '@angular/router';
     FormsModule,
     HttpModule,
     routing,
-    RouterModule
+    RouterModule,
+    CommonModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -2,12 +2,11 @@
   <div class="card-body">
     <img class="card-img-top" src={{hotel?.imgPath}} alt="Card image cap">
     <div class="card-content">
-      <h4 class="card-title">Hotel {{hotel?.id}}</h4>
+      <h4 class="card-title">{{hotel?.name}}</h4>
       <p class="card-text">
-      <li>Id: {{hotel?.id}}</li>
-      <li>Name: {{hotel?.name}}</li>
-      <li>Address: {{hotel?.address}}</li>
-      <li>Email: {{hotel?.email}}</li>
+      <li>{{hotel?.address}}</li>
+      <li>{{hotel?.email}}</li>
+      <li>Starting From {{hotel?.price | currency:"USD":true}}</li>
       </p>
       <a (click)="onDetailClick(hotel?.id)" class="btn btn-primary">Room Selection</a>
     </div>
