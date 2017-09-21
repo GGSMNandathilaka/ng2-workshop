@@ -3,4 +3,5 @@ export class Hotel {
   name: string;
   address: string;
   email: string;
+  imgPath: string;
 }
