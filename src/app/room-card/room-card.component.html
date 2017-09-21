@@ -16,6 +16,11 @@
       <li>{{room?.price | currency:"USD":true}}</li>
       </p>
       <!--<a (click)="onDetailClick(hotel?.id)" class="btn btn-primary">Room Selection</a>-->
+
+      <select class="selectpicker">
+        <option *ngFor="let option of roomCount">{{option}}</option>
+      </select>
+
       <div class="checkbox">
         <input type="checkbox" value="">
       </div>
