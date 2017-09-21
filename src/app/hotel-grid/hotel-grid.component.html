@@ -1,4 +1,4 @@
-<div class="hotel-grid">
+<div class="hotel-grid" *ngIf="hotels">
   <div class="row">
     <div class="col-md-4" *ngFor="let hotel of hotels">
       <hotel-card [hotel]="hotel"></hotel-card>

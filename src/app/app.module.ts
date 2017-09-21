@@ -11,13 +11,15 @@ import {routing} from './app.routes';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import { RoomGridComponent } from './room-grid/room-grid.component';
+import { RoomCardComponent } from './room-card/room-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotelCardComponent,
     HotelGridComponent,
-    RoomGridComponent
+    RoomGridComponent,
+    RoomCardComponent
   ],
   imports: [
     BrowserModule,

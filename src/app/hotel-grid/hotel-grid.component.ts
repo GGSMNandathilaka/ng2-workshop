@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {DataService} from "../../services/data.service";
-import {Hotel} from "../../models/hotel";
+import {DataService} from '../../services/data.service';
+import {Hotel} from '../../models/hotel';
 
 @Component({
   selector: 'hotel-grid',

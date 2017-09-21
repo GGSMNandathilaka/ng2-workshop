@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api_hotels_url: 'https://workshop-16245.firebaseio.com/hotels.json'
+  api_hotels_url: 'https://workshop-16245.firebaseio.com'
 };

@@ -1,0 +1,24 @@
+<div class="card" *ngIf="room">
+  <div class="card-body">
+    <img class="card-img-top" src={{room?.imgPath}} alt="Card image cap">
+    <div class="card-content">
+      <h4 class="card-title">{{room?.name}}</h4>
+      <p class="card-text">
+      <li>{{room?.description}}</li>
+      <li>{{room?.roomBasis}}</li>
+      <li>
+        <span *ngFor="let f of room.facilities">
+          <span class="chip">
+            {{f}}
+          </span>
+        </span>
+      </li>
+      <li>{{room?.price | currency:"USD":true}}</li>
+      </p>
+      <!--<a (click)="onDetailClick(hotel?.id)" class="btn btn-primary">Room Selection</a>-->
+      <div class="checkbox">
+        <input type="checkbox" value="">
+      </div>
+    </div>
+  </div>
+</div>
