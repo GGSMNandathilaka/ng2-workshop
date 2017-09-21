@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailViewComponent } from './detail-view.component';
+import { RoomGridComponent } from './room-grid.component';
 
-describe('DetailViewComponent', () => {
-  let component: DetailViewComponent;
-  let fixture: ComponentFixture<DetailViewComponent>;
+describe('RoomGridComponent', () => {
+  let component: RoomGridComponent;
+  let fixture: ComponentFixture<RoomGridComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailViewComponent ]
+      declarations: [ RoomGridComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailViewComponent);
+    fixture = TestBed.createComponent(RoomGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

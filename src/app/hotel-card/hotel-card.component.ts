@@ -18,7 +18,7 @@ export class HotelCardComponent implements OnInit {
   }
 
   onDetailClick(id: number) {
-    this.router.navigate(['hotels/' + id]);
+    this.router.navigate(['hotels/' + id + '/rooms']);
   }
 
 }
