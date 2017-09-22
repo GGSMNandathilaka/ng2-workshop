@@ -38,7 +38,9 @@ export class RoomCardComponent implements OnInit {
   countTotalPrice(roomCount: number, price: string) {
     if (roomCount !== undefined && roomCount !== null) {
       const p = +price;
-      return roomCount * p;
+      let tot = roomCount * p;
+      this.room.totalPrice = '' + tot;
+      return tot;
     } else {
       return 0;
     }

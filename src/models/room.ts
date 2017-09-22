@@ -8,4 +8,5 @@ export class Room {
   roomBasis: string[];
   roomCount = 0;
   isSelect: boolean;
+  totalPrice: string;
 }

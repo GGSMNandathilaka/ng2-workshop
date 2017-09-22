@@ -12,6 +12,7 @@ export class RoomGridComponent implements OnInit {
 
   hotelID: number;
   rooms: Room[];
+  selectedRooms: Room[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
               private dataService: DataService) {
@@ -29,11 +30,13 @@ export class RoomGridComponent implements OnInit {
   }
 
   onRoomSelect(event) {
-    console.log('selected-room:', event);
+    this.selectedRooms.push(event);
+    console.log('selected-room:', this.selectedRooms);
   }
 
   onRoomRemove(event) {
     console.log('remove-room:', event);
   }
+
 
 }
