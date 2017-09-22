@@ -5,7 +5,8 @@ import {RoomGridComponent} from './room-grid/room-grid.component';
 import {SearchBarComponent} from "./search-bar/search-bar.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: 'hotels', pathMatch: 'full'},
+  {path: '', redirectTo: 'search', pathMatch: 'full'},
+  {path: 'hotels/:city', component: HotelGridComponent},
   {path: 'hotels', component: HotelGridComponent},
   {path: 'hotels/:id/rooms', component: RoomGridComponent},
   {path: 'search', component:SearchBarComponent}

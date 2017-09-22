@@ -7,5 +7,6 @@ export class Hotel {
   email: string;
   imgPath: string;
   price: string;
+  location: string;
   rooms: Room[];
 }

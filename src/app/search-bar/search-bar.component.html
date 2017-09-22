@@ -1,17 +1,31 @@
 <div class="search-bar">
   <div class="jumbotron">
     <form class="row" novalidate (ngSubmit)="onSubmit(searchCriteria)" [formGroup]="searchCriteria">
-      <div class="col-md-6" >
-        <input class="form-control input-md" placeholder="Search Here" type="text" formControlName="keyWord" required>
+      <div class="col-md-4" >
+        <md-form-field >
+          <input mdInput placeholder="City" aria-label="City" [mdAutocomplete]="auto" formControlName="keyWord">
+          <md-autocomplete #auto="mdAutocomplete">
+            <md-option *ngFor="let city of cities" [value]="city">
+              <span>{{city}}</span>
+            </md-option>
+          </md-autocomplete>
+        </md-form-field>
       </div>
       <div class="col-md-4" >
-        <my-date-picker class="input-md" name="checkInDate" formControlName="checkInDate">
-        </my-date-picker>
+        <md-form-field>
+          <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" formControlName="checkInDate">
+          <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+          <md-datepicker #picker></md-datepicker>
+        </md-form-field>
       </div>
       <div class="col-md-2" >
-        <button class="btn btn-primary btn-md" type="submit">Search</button>
+        <button class="btn btn-primary btn-lg" type="submit">Search</button>
       </div>
     </form>
+
+
+
+
 
   </div>
 </div>

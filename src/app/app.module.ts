@@ -14,6 +14,8 @@ import { RoomGridComponent } from './room-grid/room-grid.component';
 import { RoomCardComponent } from './room-card/room-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import {MyDatePickerModule} from "mydatepicker";
+import {MdAutocompleteModule, MdDatepickerModule, MdInputModule, MdNativeDateModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -26,13 +28,20 @@ import {MyDatePickerModule} from "mydatepicker";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     routing,
     RouterModule,
     CommonModule,
     ReactiveFormsModule,
-    MyDatePickerModule
+    MyDatePickerModule,
+    MdInputModule,
+    MdNativeDateModule,
+    MdDatepickerModule,
+    MdAutocompleteModule
+
+
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
