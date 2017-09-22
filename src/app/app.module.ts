@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {DataService} from '../services/data.service';
 import {HotelCardComponent} from './hotel-card/hotel-card.component';
@@ -12,6 +12,8 @@ import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import { RoomGridComponent } from './room-grid/room-grid.component';
 import { RoomCardComponent } from './room-card/room-card.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import {MyDatePickerModule} from "mydatepicker";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { RoomCardComponent } from './room-card/room-card.component';
     HotelCardComponent,
     HotelGridComponent,
     RoomGridComponent,
-    RoomCardComponent
+    RoomCardComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,9 @@ import { RoomCardComponent } from './room-card/room-card.component';
     HttpModule,
     routing,
     RouterModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    MyDatePickerModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

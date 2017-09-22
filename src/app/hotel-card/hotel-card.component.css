@@ -7,6 +7,7 @@
 
 .card {
   margin-bottom: 20px;
+  box-shadow: 0 0 2px #c3b4b4;
 }
 
 .card-body .card-content {
@@ -17,3 +18,22 @@ li {
   list-style: none;
 }
 
+.button-click{
+  color: #ffffff !important;
+  cursor: pointer;
+}
+.card-body{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.address{
+  font-size: 14px;
+}
+.price-title{
+  padding-top: 10px;
+  font-size: 14px;
+}
+.price-title .price{
+  font-size: 20px;
+  font-weight: 600;
+}

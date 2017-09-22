@@ -1,7 +1,12 @@
 <div class="hotel-grid" *ngIf="hotels">
+  <search-bar (onSubmitEvent)="onSearchSubmit($event)"></search-bar>
   <div class="row">
     <div class="col-md-4" *ngFor="let hotel of hotels">
       <hotel-card [hotel]="hotel"></hotel-card>
     </div>
+    <div class="col-md-12" *ngIf="hotels.length<1">
+      <h4 class="text-muted text-center">No Results.</h4>
+    </div>
   </div>
+
 </div>

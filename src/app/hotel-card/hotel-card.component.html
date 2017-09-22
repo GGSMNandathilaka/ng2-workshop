@@ -4,11 +4,11 @@
     <div class="card-content">
       <h4 class="card-title">{{hotel?.name}}</h4>
       <p class="card-text">
-      <li>{{hotel?.address}}</li>
-      <li>{{hotel?.email}}</li>
-      <li>Starting From {{hotel?.price | currency:"USD":true}}</li>
+      <a href="mailto:{{hotel?.email}}" class="email">{{hotel?.email}}</a>
+      <li class="address">{{hotel?.address}}</li>
+      <li class="price-title">Starting From <span class="price">{{hotel?.price | currency:"USD":true}}</span> </li>
       </p>
-      <a (click)="onDetailClick(hotel?.id)" class="btn btn-primary">Room Selection</a>
+      <a (click)="onDetailClick(hotel?.id)" class="btn btn-primary button-click" >Room Selection</a>
     </div>
   </div>
 </div>

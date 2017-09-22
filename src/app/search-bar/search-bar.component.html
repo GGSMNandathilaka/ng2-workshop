@@ -1,0 +1,17 @@
+<div class="search-bar">
+  <div class="jumbotron">
+    <form class="row" novalidate (ngSubmit)="onSubmit(searchCriteria)" [formGroup]="searchCriteria">
+      <div class="col-md-6" >
+        <input class="form-control input-md" placeholder="Search Here" type="text" formControlName="keyWord" required>
+      </div>
+      <div class="col-md-4" >
+        <my-date-picker class="input-md" name="checkInDate" formControlName="checkInDate">
+        </my-date-picker>
+      </div>
+      <div class="col-md-2" >
+        <button class="btn btn-primary btn-md" type="submit">Search</button>
+      </div>
+    </form>
+
+  </div>
+</div>
