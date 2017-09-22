@@ -12,6 +12,7 @@ export class RoomGridComponent implements OnInit {
 
   hotelID: number;
   rooms: Room[];
+  selectedRooms: Room[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
               private dataService: DataService) {
@@ -26,6 +27,23 @@ export class RoomGridComponent implements OnInit {
         });
       }
     });
+  }
+
+  onRoomSelect(event) {
+    this.selectedRooms.push(event);
+    console.log('selected-room:', this.selectedRooms);
+  }
+
+  onRoomRemove(event) {
+    if (this.selectedRooms && this.selectedRooms.length > 0) {
+      for (let i = 0; i < this.selectedRooms.length; i++) {
+        if (this.selectedRooms[i].id === event) {
+          this.selectedRooms.splice(i, 1);
+        }
+      }
+    }
+
+    console.log('after:', this.selectedRooms);
   }
 
 }
