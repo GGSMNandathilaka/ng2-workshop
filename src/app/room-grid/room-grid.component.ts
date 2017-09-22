@@ -28,4 +28,12 @@ export class RoomGridComponent implements OnInit {
     });
   }
 
+  onRoomSelect(event) {
+    console.log('selected-room:', event);
+  }
+
+  onRoomRemove(event) {
+    console.log('remove-room:', event);
+  }
+
 }

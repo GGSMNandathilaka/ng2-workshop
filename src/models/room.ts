@@ -6,4 +6,6 @@ export class Room {
   name: string;
   price: string;
   roomBasis: string[];
+  roomCount = 0;
+  isSelect: boolean;
 }

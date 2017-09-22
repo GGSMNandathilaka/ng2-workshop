@@ -17,13 +17,17 @@
       </p>
       <!--<a (click)="onDetailClick(hotel?.id)" class="btn btn-primary">Room Selection</a>-->
 
-      <select class="selectpicker">
-        <option *ngFor="let option of roomCount">{{option}}</option>
+      <select class="selectpicker" [(ngModel)]="room.roomCount">
+        <span>Room Count</span>
+        <option *ngFor="let option of roomOptions">{{option}}</option>
       </select>
 
-      <div class="checkbox">
-        <input type="checkbox" value="">
-      </div>
+      <span class="favourite" *ngIf="room.roomCount > 0">
+        <i class="material-icons favourite-icon " (click)="onFavourite($event)"
+           [ngClass]="isFavourite ? 'favourite-select' : ''">favorite_border</i>
+      </span>
+
+      <li>Total Price {{countTotalPrice(room.roomCount, room.price) | currency:"USD":true}}</li>
     </div>
   </div>
 </div>
