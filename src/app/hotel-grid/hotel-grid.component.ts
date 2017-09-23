@@ -1,31 +1,28 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../../services/data.service';
 import {Hotel} from '../../models/hotel';
-import {SearchCriteria} from "../../models/search-criteria";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'hotel-grid',
   templateUrl: './hotel-grid.component.html',
   styleUrls: ['./hotel-grid.component.css']
 })
-export class HotelGridComponent implements OnInit{
+export class HotelGridComponent implements OnInit {
   hotels: Hotel[];
-  results:Hotel[];
+  results: Hotel[];
   city: string;
 
-  constructor(private dataService: DataService,private activatedRoute: ActivatedRoute) {
+  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) {
 
     this.dataService.getHotels().subscribe((data) => {
       this.results = data;
       this.hotels = data;
 
-      console.log(this.city);
       if (this.city) {
         let keyWord = this.city.toLowerCase();
-        console.log(this.results);
         this.hotels = this.results.filter(hotel => {
-          return (hotel.location==keyWord)
+          return (hotel.location === keyWord);
         });
       }
     });
@@ -35,11 +32,9 @@ export class HotelGridComponent implements OnInit{
     });
 
 
-
-
   }
 
-  ngOnInit(){
+  ngOnInit() {
 
   }
 

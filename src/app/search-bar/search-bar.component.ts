@@ -12,8 +12,9 @@ export class SearchBarComponent implements OnInit {
 
   @Output() onSubmitEvent: EventEmitter<SearchCriteria> = new EventEmitter();
 
-  cities: string[];
+  cities: string[] = ['Colombo', 'Sigiriya', 'Waskaduwa', 'Hikkaduwa'];
   searchCriteria: FormGroup;
+  filteredCities = [];
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
   }
@@ -26,13 +27,20 @@ export class SearchBarComponent implements OnInit {
       }
     );
 
-    this.cities = ['Colombo', 'Sigiriya', 'Waskaduwa', 'Hikkaduwa'];
+    this.searchCriteria.controls['keyWord'].valueChanges.subscribe(d => {
+      this.filteredCities = this.filterCities(d);
+    });
   }
 
   onSubmit({value, valid}: { value: SearchCriteria, valid: boolean }) {
     console.log(value, valid);
     this.onSubmitEvent.emit(value);
     this.router.navigate(['hotels/' + value.keyWord]);
+  }
+
+  filterCities(name: string) {
+    return this.cities.filter(city =>
+      city.toLowerCase().indexOf(name.toLowerCase()) === 0);
   }
 
 }

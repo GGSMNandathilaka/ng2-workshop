@@ -5,7 +5,7 @@
         <md-form-field>
           <input mdInput placeholder="City" aria-label="City" [mdAutocomplete]="auto" formControlName="keyWord">
           <md-autocomplete #auto="mdAutocomplete">
-            <md-option *ngFor="let city of cities" [value]="city">
+            <md-option *ngFor="let city of filteredCities" [value]="city">
               <span>{{city}}</span>
             </md-option>
           </md-autocomplete>
