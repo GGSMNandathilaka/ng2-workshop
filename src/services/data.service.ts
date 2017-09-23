@@ -27,7 +27,7 @@ export class DataService {
    * @returns {Observable<any>}
    */
   getRooms(id: number) {
-    return this.http.get(this.roomUrl + '/' + id + '/rooms.json')
+    return this.http.get(this.roomUrl + '/' + (id - 1) + '/rooms.json')
       .map((res) => res.json());
   }
 
