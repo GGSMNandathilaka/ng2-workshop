@@ -14,23 +14,25 @@ export class SearchBarComponent implements OnInit {
 
   cities: string[];
   searchCriteria: FormGroup;
-  constructor(private formBuilder: FormBuilder, private router:Router) { }
+
+  constructor(private formBuilder: FormBuilder, private router: Router) {
+  }
 
   ngOnInit() {
     this.searchCriteria = this.formBuilder.group(
       {
-        keyWord:[''],
-        checkInDate:[]
+        keyWord: [''],
+        checkInDate: []
       }
     );
 
-    this.cities = ['Colombo','Sigiriya','Waskaduwa','Hikkaduwa'];
+    this.cities = ['Colombo', 'Sigiriya', 'Waskaduwa', 'Hikkaduwa'];
   }
 
-  onSubmit({ value, valid }: { value: SearchCriteria, valid: boolean }) {
+  onSubmit({value, valid}: { value: SearchCriteria, valid: boolean }) {
     console.log(value, valid);
     this.onSubmitEvent.emit(value);
-    this.router.navigate(['hotels/'+value.keyWord])
+    this.router.navigate(['hotels/' + value.keyWord]);
   }
 
 }
