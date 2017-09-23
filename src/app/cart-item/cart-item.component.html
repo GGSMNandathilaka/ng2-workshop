@@ -1,0 +1,13 @@
+<div class="card" *ngIf="item">
+  <div class="card-body">
+    <img class="card-img-top" src={{item?.imgPath}} alt="Card image cap">
+    <div class="card-content">
+      <h4 class="card-title">{{item?.name}}</h4>
+      <li>
+        {{item?.roomCount}}
+        <span>{{item.roomCount > 1 ? 'Rooms': 'Room'}}</span>
+      </li>
+      <li>Total Price {{item.totalPrice | currency:"USD":true}}</li>
+    </div>
+  </div>
+</div>

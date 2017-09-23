@@ -45,5 +45,4 @@ export class RoomGridComponent implements OnInit {
 
     console.log('after:', this.selectedRooms);
   }
-
 }

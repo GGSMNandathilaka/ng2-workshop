@@ -16,6 +16,8 @@ import {SearchBarComponent} from './search-bar/search-bar.component';
 import {MyDatePickerModule} from 'mydatepicker';
 import {MdAutocompleteModule, MdDatepickerModule, MdInputModule, MdNativeDateModule} from "@angular/material";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HotelGridComponent,
     RoomGridComponent,
     RoomCardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ShoppingCartComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,

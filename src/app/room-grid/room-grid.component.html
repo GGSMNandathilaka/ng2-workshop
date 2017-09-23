@@ -1,3 +1,18 @@
+<!-- Trigger the modal with a button -->
+<i data-toggle="modal" data-target="#cartModal" class="material-icons cart">shopping_cart</i>
+<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+<!-- Modal -->
+<div id="cartModal" class="modal fade" role="dialog" *ngIf="selectedRooms">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <shopping-cart [items]="selectedRooms"></shopping-cart>
+
+  </div>
+</div>
+
+
 <div class="hotel-grid" *ngIf="rooms">
   <div class="row">
     <div class="col-md-4" *ngFor="let room of rooms">
