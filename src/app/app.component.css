@@ -2,3 +2,10 @@
 .inner-container{
   margin: 73px 38px;
 }
+
+.navbar.fixed-top{
+  background: #2d3b68;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #182848, #2d3b68);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #182848, #2d3b68); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}

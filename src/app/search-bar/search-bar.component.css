@@ -1,0 +1,12 @@
+.jumbotron{
+  background-color: rgba(190, 43, 43, 0);
+  background-image: url(http://www.windsorsuiteshotel.com/uploads/cms_apps/imagenes/background-executive-club.jpg);
+  padding: 200px 0;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(230, 230, 230, 0.5);
+}
+.search-bars.col-md-8 {
+  padding: 40px 84px 30px 42px;
+  background: #fff;
+  border-radius: 10px;
+}

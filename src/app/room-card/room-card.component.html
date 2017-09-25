@@ -9,7 +9,7 @@
       <h4 class="card-title">{{room?.name}}</h4>
       <p class="card-text">
       <li>{{room?.description}}</li>
-      <li>{{room?.roomBasis}}</li>
+      <li class="room-type">{{room?.roomBasis}}</li>
       <li>
           <span *ngFor="let f of room.facilities">
             <span class="chip">

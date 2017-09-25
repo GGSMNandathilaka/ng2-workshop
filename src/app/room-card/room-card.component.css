@@ -62,9 +62,11 @@ span.price-room {
   font-weight: 700;
 }
 .rooms-selected select{
-  padding: 5px;
-  min-width: 150px;
+  padding: 8px;
+  min-width: 180px;
   font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
 }
 span.favourite-non-select::after {
   content: "Add to cart";
@@ -72,4 +74,9 @@ span.favourite-non-select::after {
 span.favourite-select::after {
   content: "Added to cart";
   transition-duration: 100ms;
+}
+li.room-type{
+  margin: 10px 0;
+  font-size:14px;
+  font-weight: 700;
 }
