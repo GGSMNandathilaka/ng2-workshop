@@ -15,7 +15,7 @@
 
 <div class="hotel-grid" *ngIf="rooms">
   <div class="row">
-    <div class="col-md-4" *ngFor="let room of rooms">
+    <div class="col-md-12" *ngFor="let room of rooms">
       <room-card
         [room]="room"
         (roomSelectEmitter)="onRoomSelect($event)"

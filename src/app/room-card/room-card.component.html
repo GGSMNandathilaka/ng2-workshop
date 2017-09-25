@@ -1,33 +1,39 @@
-<div class="card" *ngIf="room">
-  <div class="card-body">
-    <img class="card-img-top" src={{room?.imgPath}} alt="Card image cap">
-    <div class="card-content">
+<div class="room-card" *ngIf="room">
+  <div class="row">
+    <div class="col-md-4">
+      <img class="card-img-top" src={{room?.imgPath}} alt="Card image cap">
+
+      <span class="price-room">{{room?.price | currency:"USD":true}}</span>
+    </div>
+    <div class="col-md-4">
       <h4 class="card-title">{{room?.name}}</h4>
       <p class="card-text">
       <li>{{room?.description}}</li>
       <li>{{room?.roomBasis}}</li>
       <li>
-        <span *ngFor="let f of room.facilities">
-          <span class="chip">
-            {{f}}
+          <span *ngFor="let f of room.facilities">
+            <span class="chip">
+              {{f}}
+            </span>
           </span>
-        </span>
       </li>
-      <li>{{room?.price | currency:"USD":true}}</li>
       </p>
-      <!--<a (click)="onDetailClick(hotel?.id)" class="btn btn-primary">Room Selection</a>-->
+    </div>
+    <div class="col-md-4 rooms-selected">
 
+
+      <!--<a (click)="onDetailClick(hotel?.id)" class="btn btn-primary">Room Selection</a>-->
+      <span>Room Count</span><br/>
       <select class="selectpicker" [(ngModel)]="room.roomCount">
-        <span>Room Count</span>
         <option *ngFor="let option of roomOptions">{{option}}</option>
       </select>
-
-      <span class="favourite" *ngIf="room.roomCount > 0">
-        <i class="material-icons favourite-icon " (click)="onFavourite($event)"
-           [ngClass]="isFavourite ? 'favourite-select' : ''">favorite_border</i>
-      </span>
-
-      <li>Total Price {{countTotalPrice(room.roomCount, room.price) | currency:"USD":true}}</li>
+      <div class="room-price-bottom"  *ngIf="room.roomCount > 0">
+        <span >Total Price</span>
+        <p>{{countTotalPrice(room.roomCount, room.price) | currency:"USD":true}}</p>
+        <a class="btn btn-primary button-click ">
+          <span (click)="onFavourite($event)" [ngClass]="isFavourite ? 'favourite-select' : 'favourite-non-select'"></span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
