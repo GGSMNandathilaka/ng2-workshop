@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {DataService} from '../../services/data.service';
-import {Traveller} from '../../models/traveller';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../../services/data.service';
+import { Traveller } from '../../models/traveller';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-traveller-list',
@@ -30,6 +30,9 @@ export class TravellerListComponent implements OnInit {
       });
     });
     this.initForm();
+    // this.dataService.travellers.asObservable().subscribe(result => {
+    //   console.log('added');
+    // });
   }
 
   initForm() {
@@ -44,9 +47,13 @@ export class TravellerListComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.addTravellersForm.value);
+    let traveller = new Traveller();
+    traveller = this.addTravellersForm.value;
+    traveller.id = this.travellers.length + 1;
+    console.log(traveller);
+    this.dataService.addTravellers(traveller, this.hotelId);
     this.addTravellersForm.reset();
-  }
 
+  }
 
 }
