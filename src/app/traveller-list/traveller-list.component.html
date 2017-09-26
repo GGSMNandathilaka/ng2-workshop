@@ -1,0 +1,76 @@
+<div class="card">
+  <div class="card-block">
+    <div class="row" *ngFor="let traveller of travellers">
+      <div class="col-md-1">
+        <img class="profile card-img-top img-thumbnail rounded float-left " src="../assets/img/image1.jpg">
+      </div>
+      <div class="col-md-3">
+        <p class="card-text">{{traveller.title+'. '+traveller.firstName+' '+traveller.lastName}}</p>
+      </div>
+      <div class="col-md-3">
+        <p class="card-text">{{traveller.type}}</p>
+      </div>
+      <div class="col-md-2">
+        <p class="card-text">{{traveller.gender}}</p>
+      </div>
+      <div class="col-md-3">
+        {{traveller.age +' Year(s)'}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<md-expansion-panel>
+  <md-expansion-panel-header>
+    <md-panel-title>
+      Add Traveller
+    </md-panel-title>
+  </md-expansion-panel-header>
+
+
+  <form [formGroup]="addTravellersForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="center-block"> Title:
+        <select class="form-control" formControlName="title">
+          <option *ngFor="let title of titles" [value]="title">{{title}}</option>
+        </select>
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">First Name:
+        <input class="form-control" formControlName="firstName">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">Last Name:
+        <input class="form-control" formControlName="lastName">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">Type:
+        <select class="form-control" formControlName="type">
+          <option *ngFor="let type of types" [value]="type">{{type}}</option>
+        </select>
+      </label>
+    </div>
+    <div class="form-group radio">
+      <label class="center-block"> Gender: </label>
+      <label class="center-block"><input type="radio" formControlName="gender" value="male">Male</label>
+      <label class="center-block"><input type="radio" formControlName="gender" value="female">Female</label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">Age:
+        <input class="form-control" formControlName="age">
+      </label>
+    </div>
+
+    <button type="submit"
+            [disabled]="addTravellersForm.pristine" class="btn btn-primary">Save
+    </button>
+  </form>
+
+
+</md-expansion-panel>
+
+

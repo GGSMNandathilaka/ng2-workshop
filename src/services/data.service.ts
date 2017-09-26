@@ -31,4 +31,15 @@ export class DataService {
       .map((res) => res.json());
   }
 
+
+  /***
+   * Retrieve travellers for specific hotel
+   * @returns {Observable<any>}
+   */
+  getTravellers(id: number) {
+    return this.http.get(this.roomUrl + '/' + id + '/travellers.json')
+      .map((res) => res.json());
+  }
+
+
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {DataService} from '../../services/data.service';
 import {Room} from "../../models/room";
 
@@ -15,7 +15,8 @@ export class RoomGridComponent implements OnInit {
   selectedRooms: Room[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
-              private dataService: DataService) {
+              private dataService: DataService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -44,5 +45,9 @@ export class RoomGridComponent implements OnInit {
     }
 
     console.log('after:', this.selectedRooms);
+  }
+
+  onTravellerAdd(event) {
+    this.router.navigate(['hotels/' + this.hotelID + '/travellers']);
   }
 }
