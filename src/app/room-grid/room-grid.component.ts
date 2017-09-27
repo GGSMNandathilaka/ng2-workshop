@@ -50,4 +50,16 @@ export class RoomGridComponent implements OnInit {
   onTravellerAdd(event) {
     this.router.navigate(['hotels/' + this.hotelID + '/travellers']);
   }
+
+  getItemCount(): number {
+    let itemCount = 0;
+    if (this.selectedRooms) {
+      if (this.selectedRooms.length > 0) {
+        for (let i = 0; i < this.selectedRooms.length; i++) {
+          itemCount += +this.selectedRooms[i].roomCount;
+        }
+      }
+    }
+    return itemCount;
+  }
 }
