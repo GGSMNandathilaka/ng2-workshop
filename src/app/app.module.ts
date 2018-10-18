@@ -14,15 +14,12 @@ import {RoomGridComponent} from './room-grid/room-grid.component';
 import {RoomCardComponent} from './room-card/room-card.component';
 import {SearchBarComponent} from './search-bar/search-bar.component';
 import {MyDatePickerModule} from 'mydatepicker';
-import {
-  MdAutocompleteModule, MdDatepickerModule, MdExpansionModule, MdInputModule,
-  MdNativeDateModule
-} from "@angular/material";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { CartItemComponent } from './cart-item/cart-item.component';
-import { TravellerListComponent } from './traveller-list/traveller-list.component';
-import { TravellerComponent } from './traveller/traveller.component';
+import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
+import {CartItemComponent} from './cart-item/cart-item.component';
+import {TravellerListComponent} from './traveller-list/traveller-list.component';
+import {TravellerComponent} from './traveller/traveller.component';
+import {MatAutocompleteModule, MatDatepickerModule, MatExpansionModule, MatInputModule, MatNativeDateModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -49,11 +46,11 @@ import { TravellerComponent } from './traveller/traveller.component';
     CommonModule,
     ReactiveFormsModule,
     MyDatePickerModule,
-    MdInputModule,
-    MdNativeDateModule,
-    MdDatepickerModule,
-    MdAutocompleteModule,
-    MdExpansionModule
+    MatInputModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatAutocompleteModule,
+    MatExpansionModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
